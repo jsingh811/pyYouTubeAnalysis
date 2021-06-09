@@ -103,3 +103,29 @@ filepath = "/Users/abc/Documents/travel_comment_details.json"
 comments = extract_locations.read_comment_text(filepath)
 locations = extract_locations.extract_locations(comments)
 ```
+
+
+# Citation 
+
+Please cite this software as below
+
+## APA
+
+```
+Singh, Jyotika (2021). jsingh811/pyYouTubeAnalysis: pyYouTubeAnalysis: YouTube data requests and NER on text (v1.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.4915746
+```
+
+## BibTex 
+
+```
+@misc{https://doi.org/10.5281/zenodo.4915746,
+  doi = {10.5281/ZENODO.4915746},
+  url = {https://zenodo.org/record/4915746},
+  author = {Singh,  Jyotika},
+  keywords = {YouTube,  NER,  NLP},
+  title = {jsingh811/pyYouTubeAnalysis: pyYouTubeAnalysis: YouTube data requests and NER on text},
+  publisher = {Zenodo},
+  year = {2021},
+  copyright = {Open Access}
+}
+```
