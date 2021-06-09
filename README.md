@@ -112,7 +112,7 @@ Please cite this software as below
 ## APA
 
 ```
-Singh, Jyotika (2021). jsingh811/pyYouTubeAnalysis: pyYouTubeAnalysis: YouTube data requests and NER on text (v1.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.4915746
+Singh, J. (2021). jsingh811/pyYouTubeAnalysis: pyYouTubeAnalysis: YouTube data requests and NER on text (v1.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.4915746
 ```
 
 ## BibTex 
