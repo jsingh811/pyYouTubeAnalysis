@@ -1,5 +1,5 @@
 # pyYouTubeAnalysis
-Interaction with the YouTube API to pull data ans run analysis using statistics and NLP.
+Interaction with the YouTube API to pull data and run analysis using statistics and NLP. This analysis pulls locations by running NER on a list of strings. 
 
 # Setup
 Clone the project and get it setup
