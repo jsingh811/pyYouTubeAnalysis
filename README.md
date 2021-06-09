@@ -8,7 +8,6 @@ Clone the project and get it setup
 git clone git@github.com:jsingh811/pyYouTubeAnalysis.git
 cd pyYouTubeAnalysis
 pip install -e .
-pip install -r requirements/requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
