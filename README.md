@@ -81,9 +81,9 @@ with open("/".join([
 ```
 ## Sample output  
 
-The data inside `...video_details.json` file that generates is a list of dictionaries, of the following format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/tree/samples/travel_vlog_2020-01-01T000000Z_2020-01-02T000000Z_video_details.json).  
+The data inside `...video_details.json` file that generates is a list of dictionaries, of the following format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/blob/master/samples/travel%20vlog_2020-01-01T000000Z_2020-01-02T000000Z_video_details.json).  
 
-The data inside `...comment_details.json` file that generates is a list of dictionaries, of the following format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/tree/samples/travel_vlog_2020-01-01T000000Z_2020-01-02T000000Z_comment_details.json).
+The data inside `...comment_details.json` file that generates is a list of dictionaries, of the following format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/blob/master/samples/travel%20vlog_2020-01-01T000000Z_2020-01-02T000000Z_comment_details.json).
 
 # Extracting locations from comments file generated above
 
@@ -110,7 +110,7 @@ locations = extract_locations.extract_locations(comments)
 
 ## Sample output  
 
-The data inside `locations_....json` file that generates using the [command line usage](https://github.com/jsingh811/pyYouTubeAnalysis#command-line-usage-1) example, or the variable `locations` in the [import and use](https://github.com/jsingh811/pyYouTubeAnalysis#import-and-use-1) example is a dictionary of location names as keys and their occurrence counts as values of the format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/tree/samples/locations_travel_vlog_2020-01-01T000000Z_2020-01-02T000000Z_comment_details.json).
+The data inside `locations_....json` file that generates using the [command line usage](https://github.com/jsingh811/pyYouTubeAnalysis#command-line-usage-1) example, or the variable `locations` in the [import and use](https://github.com/jsingh811/pyYouTubeAnalysis#import-and-use-1) example is a dictionary of location names as keys and their occurrence counts as values of the format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/blob/master/samples/locations_travel%20vlog_2020-01-01T000000Z_2020-01-02T000000Z_comment_details.json).
 
 # Citation 
 
