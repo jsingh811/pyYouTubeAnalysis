@@ -1,5 +1,5 @@
 # pyYouTubeAnalysis
-Interaction with the YouTube API to pull data and run analysis using statistics and NLP. This analysis pulls location names by running Named-entity Recognition (NER) on a list of strings. 
+Interaction with the YouTube API to pull data and run analysis using statistics and Natural Language Processing (NLP). Contains NLP implementations of text cleaning specific to social media data noise, key-phrase extraction using NLTK and Named-entity Recognition (NER) on a list of strings. 
 
 # Setup
 Clone the project and get it setup
@@ -11,7 +11,18 @@ pip install -e .
 python -m spacy download en_core_web_sm
 ```
 
-# Usage
+# Demos
+
+To see YouTube data extraction examples, see the section [YouTube Data Fetching](https://github.com/jsingh811/pyYouTubeAnalysis#youtube-data-fetching).
+
+To see NER extraction examples, see the section [Extracting Locations](https://github.com/jsingh811/pyYouTubeAnalysis#extracting-locations).
+
+To see Key-phrase extraction examples, see the section [Extracting Keyphrases from Text](https://github.com/jsingh811/pyYouTubeAnalysis#extracting-keyphrases-from-text).
+
+To see data cleaning examples for removing emojis and URLs from text, see the section [Removing Emojis and URLs from Text](https://github.com/jsingh811/pyYouTubeAnalysis#removing-emojis-and-urls-from-text).
+
+
+# YouTube Data Fetching
 
 ## Command Line Usage
 
@@ -85,7 +96,9 @@ The data inside `...video_details.json` file that generates is a list of diction
 
 The data inside `...comment_details.json` file that generates is a list of dictionaries, of the following format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/blob/master/samples/travel%20vlog_2020-01-01T000000Z_2020-01-02T000000Z_comment_details.json).
 
-# Extracting locations from comments file generated above
+# Extracting Locations
+
+The following contains examples for extracting location from comments file generated above.
 
 ## Command Line Usage
 
@@ -111,6 +124,43 @@ locations = extract_locations.extract_locations(comments)
 ## Sample output  
 
 The data inside `locations_....json` file that generates using the [command line usage](https://github.com/jsingh811/pyYouTubeAnalysis#command-line-usage-1) example, or the variable `locations` in the [import and use](https://github.com/jsingh811/pyYouTubeAnalysis#import-and-use-1) example is a dictionary of location names as keys and their occurrence counts as values of the format as shown in [this file](https://github.com/jsingh811/pyYouTubeAnalysis/blob/master/samples/locations_travel%20vlog_2020-01-01T000000Z_2020-01-02T000000Z_comment_details.json).
+
+
+# Extracting Keyphrases from Text
+
+## Import and Use
+
+```
+from pyYouTubeAnalysis.phrases import KeyPhraseGenerator
+
+documents = [
+            """Did you know about this conference in Miami? It is about Natural
+            Language Processing techniques as applied to messy data.""",
+            "I really enjoyed the chocolate cheesecake yesterday!"
+]
+
+kp = KeyPhraseGenerator()
+
+phrases =  kp.extract_keyphrases(documents)
+
+```
+
+# Removing Emojis and URLs from Text
+
+## Import and Use
+
+```
+from pyYouTubeAnalysis import cleaner
+
+document = " emoji was here -> 😃 , and url was here -> https://github.com"
+
+# remove emoji
+emoji_removed = cleaner.remove_emojis(document)
+
+# removing url 
+url_removed = cleaner.remove_urls(document)
+
+```
 
 # Citation 
 
