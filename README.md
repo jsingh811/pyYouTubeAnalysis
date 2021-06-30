@@ -208,3 +208,26 @@ print("\nGenerated pdf here {}\n".format(output_path))
 
 ```
 
+# Citation 
+
+Please cite this software as below
+
+## APA
+
+```
+Singh, J. (2021). jsingh811/pyYouTubeAnalysis: YouTube Data Requests and Natural Language Processing on Text (v1.1) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.5044556
+```
+
+## BibTex 
+
+```
+@software{https://doi.org/10.5281/zenodo.5044556,
+  doi = {10.5281/ZENODO.5044556},
+  url = {https://zenodo.org/record/5044556},
+  author = {Singh,  Jyotika},
+  title = {jsingh811/pyYouTubeAnalysis: YouTube Data Requests and Natural Language Processing on Text},
+  publisher = {Zenodo},
+  year = {2021},
+  copyright = {Open Access}
+}
+```
