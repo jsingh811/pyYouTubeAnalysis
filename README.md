@@ -1,5 +1,5 @@
 # pyYouTubeAnalysis
-Interaction with the YouTube API to pull data and run analysis using statistics and Natural Language Processing (NLP). Contains NLP implementations of text cleaning specific to social media data noise, key-phrase extraction using NLTK and Named-entity Recognition (NER) on a list of strings. 
+Interaction with the YouTube API to pull data and run analysis using statistics and Natural Language Processing (NLP). Contains NLP implementations of text cleaning specific to social media data noise, key-phrase extraction using NLTK and Named-entity Recognition (NER) on a list of strings. Contains automatic plots, wordclouds, and analysis report pdf generation.
 
 # Setup
 Clone the project and get it setup
@@ -20,6 +20,8 @@ To see NER extraction examples, see the section [Extracting Locations](https://g
 To see Key-phrase extraction examples, see the section [Extracting Keyphrases from Text](https://github.com/jsingh811/pyYouTubeAnalysis#extracting-keyphrases-from-text).
 
 To see data cleaning examples for removing emojis and URLs from text, see the section [Removing Emojis and URLs from Text](https://github.com/jsingh811/pyYouTubeAnalysis#removing-emojis-and-urls-from-text).
+
+To see report generation with statistical and NLP analysis, see the section [Report Generation](https://github.com/jsingh811/pyYouTubeAnalysis#report-generation).
 
 
 # YouTube Data Fetching
@@ -162,27 +164,47 @@ url_removed = cleaner.remove_urls(document)
 
 ```
 
-# Citation 
+# Report Generation
 
-Please cite this software as below
+This functionality allows the user to crawl YouTube and gather stats related plots, wordclouds and location analysis in one pdf. The files generated as a part of this can be found in [this folder](https://github.com/jsingh811/pyYouTubeAnalysis/blob/master/samples/report).
 
-## APA
-
-```
-Singh, J. (2021). jsingh811/pyYouTubeAnalysis: pyYouTubeAnalysis: YouTube data requests and NER on text (v1.0) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.4915746
-```
-
-## BibTex 
+## Command Line Usage
 
 ```
-@misc{https://doi.org/10.5281/zenodo.4915746,
-  doi = {10.5281/ZENODO.4915746},
-  url = {https://zenodo.org/record/4915746},
-  author = {Singh,  Jyotika},
-  keywords = {YouTube,  NER,  NLP},
-  title = {jsingh811/pyYouTubeAnalysis: pyYouTubeAnalysis: YouTube data requests and NER on text},
-  publisher = {Zenodo},
-  year = {2021},
-  copyright = {Open Access}
-}
+cd pyYouTubeAnalysis
 ```
+
+```
+python report.py -path "/Users/abc/Documents" -k "travel vlog" -sd "2020-01-01T00:00:00Z" -ed "2021-03-31T00:00:00Z" -analysis "monthly,yearly"  -t "<YouTube API key (39 chars long)>"```  
+```
+
+## Import and Use
+
+```
+from pyYouTubeAnalysis.report import ReportGenerator
+from pyYouTubeAnalysis import run_crawl, crawler
+
+keyword = "travel vlog"
+start_date =  "2020-01-01T00:00:00Z"
+end_date = "2021-03-31T00:00:00Z"
+analysis_type = ["yearly", "monthly"] 
+api_token = "<YouTube API key (39 chars long)>"
+path = "/Users/abc/Documents"
+
+rgen = ReportGenerator(path, keyword, start_date, end_date, analysis_type)
+
+api = crawler.YouTubeCrawler(key=api_token)
+# Fetch data from the api
+[videos, comments] = run_crawl.get_videos_and_comments(
+    api, keyword=keyword, start_date=start_date, end_date=end_date, comment_limit=10
+)
+print("\nFetched data\n")
+rgen.get_and_plot_stats(videos)
+rgen.plot_trending_tags(videos)
+rgen.plot_comment_locations(comments)
+print("\nFetched plots\n")
+output_path = rgen.export_to_pdf()
+print("\nGenerated pdf here {}\n".format(output_path))
+
+```
+
