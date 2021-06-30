@@ -185,7 +185,7 @@ class ReportGenerator:
         self.sum_dislikes, monthly_dislikes, yearly_dislikes = self.agg_stats(dislikes)
         self.sum_comments, monthly_comments, yearly_comments = self.agg_stats(coms)
 
-        if "yearly" in ANALYSIS_TYPE:
+        if "yearly" in self.analysis_type:
             # save yearly stats
             fig, axs = plt.subplots(2, 2)
             x, y = self.plot_yearly_stats(yearly_views)
@@ -203,7 +203,7 @@ class ReportGenerator:
             fig.tight_layout()
             fig.savefig(self.path + "/yearly_stats.png")
 
-        if "monthly" in ANALYSIS_TYPE:
+        if "monthly" in self.analysis_type:
             # save monthly stats
             self.plot_monthly_stats(
                 monthly_views, stat_name="views", file_name="monthly_views.png"
@@ -258,7 +258,7 @@ class ReportGenerator:
 
         pdf.set_font("Arial", "B", size=20)
         pdf.cell(
-            200, 10, txt="Analysis for {} on YouTube".format(KEYWORD), ln=1, align="C"
+            200, 10, txt="Analysis for {} on YouTube".format(self.keyword), ln=1, align="C"
         )
         pdf.set_font("Arial", size=14)
         pdf.cell(
@@ -296,13 +296,13 @@ class ReportGenerator:
 
         pdf.set_font("Arial", "B", size=14)
         new_inx = 10
-        if "yearly" in ANALYSIS_TYPE:
+        if "yearly" in self.analysis_type:
 
             pdf.cell(200, 10, txt="Yearly breakdown of statistics", ln=10, align="L")
             pdf.image(self.path + "/yearly_stats.png", w=150, h=150)
             new_inx = new_inx + 1
 
-        if "monthly" in ANALYSIS_TYPE:
+        if "monthly" in self.analysis_type:
 
             pdf.cell(200, 10, txt="Monthly breakdown of statistics", ln=11, align="L")
             pdf.image(self.path + "/monthly_views.png", w=150, h=90)
@@ -329,7 +329,7 @@ class ReportGenerator:
         )
         pdf.image(self.path + "/comment_locations.png", w=75, h=75)
 
-        output_path = self.path + "/{}_report.pdf".format(KEYWORD.replace(" ", "_"))
+        output_path = self.path + "/{}_report.pdf".format(self.keyword.replace(" ", "_"))
         pdf.output(output_path)
 
         return output_path
