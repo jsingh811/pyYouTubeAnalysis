@@ -23,7 +23,7 @@ def get_requirements(path=REQUIREMENTS_PATH):
 
 setuptools.setup(
    name='pyYouTubeAnalysis',
-   version='1.0',
+   version='1.1',
    description='Interacting with YouTube Data API and running analysis using NLP',
    long_description=long_description,
    long_description_content_type="text/markdown",

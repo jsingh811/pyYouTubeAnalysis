@@ -21,6 +21,15 @@ def read_comment_text(filepath):
     """
     with open(filepath, "r") as f:
         data = json.load(f)
+        
+    comment_text = get_comments_list(data)
+    
+    return comment_text
+
+def get_comments_list(data):
+    """
+    Convert comments from YT response to a list of comments
+    """
     comment_text = []
     for video_id in data:
         if data[video_id]:
