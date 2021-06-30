@@ -2,3 +2,6 @@ google-api-python-client==1.7.5
 pytest==3.9.2
 spacy==3.0.6
 nltk==3.6.2
+wordcloud==1.8.1
+matplotlib==3.4.2
+fpdf==1.7.2
