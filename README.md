@@ -1,8 +1,20 @@
 # pyYouTubeAnalysis
-Interaction with the YouTube API to pull data and run analysis using statistics and Natural Language Processing (NLP). Contains NLP implementations of text cleaning specific to social media data noise, key-phrase extraction using NLTK and Named-entity Recognition (NER) on a list of strings. Contains automatic plots, wordclouds, and analysis report pdf generation.
+Interaction with the YouTube API to pull data and run analysis using statistics and Natural Language Processing (NLP). Contains NLP implementations of text cleaning specific to social media data noise, key-phrase extraction using NLTK and Named-entity Recognition (NER) on a list of strings. Contains automatic plots, word clouds, and analysis report pdf generation.
 
 # Setup
-Clone the project and get it setup
+
+1. Use pip
+
+```
+pip install pyYouTubeAnalysis
+```
+and run 
+```
+python -m spacy download en_core_web_sm
+```
+
+Or,
+2. Clone the project from github and run the following for setup.
 
 ```
 git clone git@github.com:jsingh811/pyYouTubeAnalysis.git
@@ -27,10 +39,6 @@ To see report generation with statistical and NLP analysis, see the section [Rep
 # YouTube Data Fetching
 
 ## Command Line Usage
-
-```
-cd pyYouTubeAnalysis
-```
 
 ```
 python run_crawl.py -t "<YouTube API key (39 chars long)>" -k "travel vlog" -sd "2020-01-01T00:00:00Z" -ed "2020-01-02T00:00:00Z" -climit 5 -path "/Users/abc/Documents"
@@ -104,9 +112,7 @@ The following contains examples for extracting location from comments file gener
 
 ## Command Line Usage
 
-```
-cd pyYouTubeAnalysis
-```
+Assuming you are in the parent folder `pyYouTubeAnalysis` after cloning and setting up the project, the following sample command can be used. Please alter -filepath accordingly.
 
 ```
 python extract_locations.py -filepath "/Users/abc/Documents/travel_comment_details.json"
@@ -170,9 +176,7 @@ This functionality allows the user to crawl YouTube and gather stats related plo
 
 ## Command Line Usage
 
-```
-cd pyYouTubeAnalysis
-```
+Assuming you are in the parent folder `pyYouTubeAnalysis` after cloning and setting up the project, the following sample command can be used. Please alter -path accordingly.
 
 ```
 python report.py -path "/Users/abc/Documents" -k "travel vlog" -sd "2020-01-01T00:00:00Z" -ed "2021-03-31T00:00:00Z" -analysis "monthly,yearly"  -t "<YouTube API key (39 chars long)>"```  
