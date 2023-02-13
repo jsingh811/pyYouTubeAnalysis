@@ -214,6 +214,28 @@ print("\nGenerated pdf here {}\n".format(output_path))
 
 # Citation 
 
+Kindly cite as follows.
+
+## APA
+
+```
+Singh, J. (2021). Social Media Analysis using Natural Language Processing Techniques. In Proceedings of the 20th Python in Science Conference (pp. 52-58).
+```
+
+## BibTex 
+
+```
+@InProceedings{ jyotika_singh-proc-scipy-2021,
+  author    = { {J}yotika {S}ingh },
+  title     = { {S}ocial {M}edia {A}nalysis using {N}atural {L}anguage {P}rocessing {T}echniques },
+  booktitle = { {P}roceedings of the 20th {P}ython in {S}cience {C}onference },
+  pages     = { 74 - 80 },
+  year      = { 2021 },
+  editor    = { {M}eghann {A}garwal and {C}hris {C}alloway and {D}illon {N}iederhut and {D}avid {S}hupe },
+  doi       = { 10.25080/majora-1b6fd038-009 }
+}
+```
+
 Please cite this software as below
 
 ## APA
